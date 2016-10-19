@@ -14,6 +14,7 @@ viewGrades = c.execute("SELECT name,students.id,mark FROM students,courses WHERE
 
 def computeAvg():
 	name = "" # CURRENT person's name
+        sid=0
 	gradeSum = 0 # CURRENT person's total grade
 	numCourses = 1 
 	avg = 0 
@@ -32,10 +33,11 @@ def computeAvg():
 
 			avg = float(gradeSum) / numCourses #calculate avg of CURRENT person bc ur done w him
 
-			if (name != ""): # executes only when you're on 1ST person
-				print ("%s, %d, %f"%(name, recID-1, avg)) # print out CURRENT person's info
+			if (name != ""): # executes only when you're not on 1ST person
+				print ("%s, %d, %f"%(name, sid, avg)) # print out CURRENT person's info
 
 			name = recName # NEW person is now your CURRENT person ============================
+                        sid=recID
 			gradeSum = avg = 0 # reset counters
 			numCourses = 1
 			gradeSum += recGrade #add CURRENT grade
