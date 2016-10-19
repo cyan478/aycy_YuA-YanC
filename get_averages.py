@@ -35,7 +35,7 @@ def computeAvg():
 			if (name != ""): # executes only when you're on 1ST person
 				print ("%s, %d, %f"%(name, recID-1, avg)) # print out CURRENT person's info
 
-			name = recName # NEW person is now your CURRENT person
+			name = recName # NEW person is now your CURRENT person ============================
 			gradeSum = avg = 0 # reset counters
 			numCourses = 1
 			gradeSum += recGrade #add CURRENT grade
